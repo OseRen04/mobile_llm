@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.tools/
+.model-audit/
+.cache/
+test-results/
+playwright-report/
+coverage/
+apps/web/public/runtime/
+*.log
+.DS_Store
