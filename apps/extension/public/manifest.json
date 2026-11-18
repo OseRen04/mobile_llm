@@ -1,0 +1,11 @@
+{
+  "manifest_version": 3,
+  "name": "Local Translator",
+  "description": "日本語・英語・ロシア語を端末内で翻訳。確認後に入力欄へ置換できます（実験的対応）。",
+  "version": "0.1.0",
+  "permissions": ["activeTab", "scripting"],
+  "action": { "default_popup": "index.html", "default_title": "Local Translator" },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'none'; connect-src 'self' https://huggingface.co https://*.huggingface.co https://*.hf.co"
+  }
+}

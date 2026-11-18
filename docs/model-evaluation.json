@@ -1,0 +1,1103 @@
+{
+  "evaluatedOn": "2026-11-18",
+  "status": "experimental; P0 semantic quality gate not passed",
+  "scope": "Desktop Chrome, real q8 WASM Worker inference. No iPhone/Android claim.",
+  "downloadTransport": "Playwright served the actual pinned local audit files for model downloads; the real browser installer verified SHA-256. Direct upstream CORS checked separately.",
+  "browser": "157.0.8103.79",
+  "platform": "darwin 25.6.0 (arm64)",
+  "totalSystemMemoryBytes": 17179869184,
+  "inference": {
+    "device": "wasm",
+    "dtype": "q8",
+    "threads": 1,
+    "numBeams": 1,
+    "maxInputTokens": 192,
+    "maxNewTokens": 256
+  },
+  "models": {
+    "toEnglish": {
+      "id": "Xenova/opus-mt-mul-en",
+      "revision": "72a05e47cee89c718a9db4dc70d02fef3bc39de8",
+      "totalBytes": 118351797
+    },
+    "fromEnglish": {
+      "id": "Xenova/opus-mt-en-mul",
+      "revision": "e57f9759f8e1e9ed97067bfc11e53e1eab63e57e",
+      "totalBytes": 118280580
+    }
+  },
+  "initialLoadAndInferenceMs": 1111.9,
+  "automatedChecks": {
+    "completed": 60,
+    "processingFailures": 0,
+    "emptyOutputs": 0,
+    "targetScriptMismatches": 0,
+    "offlineColdWorker": true,
+    "offlineAppRestart": true,
+    "modelDeletionMissingAssetsRejectedAndReinstall": true
+  },
+  "performanceNote": "Timings include model loads and inference; source lengths vary; ten samples per route. p50 is the median and p95 is nearest-rank (the maximum for n=10). Not a speed guarantee or comparable mobile benchmark.",
+  "performanceByRoute": [
+    {
+      "source": "ja",
+      "target": "en",
+      "samples": 10,
+      "p50Ms": 226.1,
+      "p95Ms": 1172.7
+    },
+    {
+      "source": "ru",
+      "target": "en",
+      "samples": 10,
+      "p50Ms": 174.1,
+      "p95Ms": 458.3
+    },
+    {
+      "source": "en",
+      "target": "ja",
+      "samples": 10,
+      "p50Ms": 285.15,
+      "p95Ms": 922.7
+    },
+    {
+      "source": "en",
+      "target": "ru",
+      "samples": 10,
+      "p50Ms": 286.35,
+      "p95Ms": 693.1
+    },
+    {
+      "source": "ja",
+      "target": "ru",
+      "samples": 10,
+      "p50Ms": 1082.5,
+      "p95Ms": 2118.4
+    },
+    {
+      "source": "ru",
+      "target": "ja",
+      "samples": 10,
+      "p50Ms": 1107.75,
+      "p95Ms": 1737
+    }
+  ],
+  "semanticQualityNote": "Expected script and keyword diagnostics do not validate meaning or target-language fluency. Severe hallucinations, omissions and negation errors are present; inspect records.",
+  "externalRequestSummary": {
+    "install": {
+      "count": 14,
+      "getCount": 14,
+      "requestBodies": 0
+    },
+    "warm": {
+      "count": 0,
+      "getCount": 0,
+      "requestBodies": 0
+    },
+    "offline-inference": {
+      "count": 0,
+      "getCount": 0,
+      "requestBodies": 0
+    },
+    "offline-restart": {
+      "count": 0,
+      "getCount": 0,
+      "requestBodies": 0
+    },
+    "delete-reinstall": {
+      "count": 7,
+      "getCount": 7,
+      "requestBodies": 0
+    }
+  },
+  "browserErrors": [],
+  "browserConsoleSummary": [
+    {
+      "message": "warning: MarianTokenizer fast-tokenizer compatibility warning",
+      "count": 44
+    },
+    {
+      "message": "warning: Unsupported language code \">>rus<<\"",
+      "count": 46
+    },
+    {
+      "message": "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "count": 1
+    },
+    {
+      "message": "error: Inference failed TranslatorError",
+      "count": 1
+    }
+  ],
+  "records": [
+    {
+      "id": "ja-en-01",
+      "category": "short",
+      "source": "ja",
+      "target": "en",
+      "input": "おはようございます。今日はいい天気ですね。",
+      "output": "I'm glad you did.",
+      "steps": 1,
+      "elapsedMs": 1172.7000000178814,
+      "scriptMatches": true,
+      "keywordsMatched": [
+        false
+      ],
+      "unchanged": false
+    },
+    {
+      "id": "ja-en-02",
+      "category": "casual",
+      "source": "ja",
+      "target": "en",
+      "input": "明日、一緒に公園へ行きませんか。",
+      "output": "Tomorrow, we're not going to the park together.",
+      "steps": 1,
+      "elapsedMs": 239,
+      "scriptMatches": true,
+      "keywordsMatched": [
+        true,
+        true
+      ],
+      "unchanged": false
+    },
+    {
+      "id": "ja-en-03",
+      "category": "polite",
+      "source": "ja",
+      "target": "en",
+      "input": "恐れ入りますが、駅への行き方を教えていただけますか。",
+      "output": "I'm afraid I'm just trying to tell you how to go to the park.",
+      "steps": 1,
+      "elapsedMs": 334.2000000178814,
+      "scriptMatches": true,
+      "keywordsMatched": [
+        false
+      ],
+      "unchanged": false
+    },
+    {
+      "id": "ja-en-04",
+      "category": "negation",
+      "source": "ja",
+      "target": "en",
+      "input": "私は肉を食べませんが、魚は食べます。",
+      "output": "I don't eat meat, but fish eat.",
+      "steps": 1,
+      "elapsedMs": 230.60000002384186,
+      "scriptMatches": true,
+      "keywordsMatched": [
+        true,
+        true,
+        true
+      ],
+      "unchanged": false
+    },
+    {
+      "id": "ja-en-05",
+      "category": "quantity",
+      "source": "ja",
+      "target": "en",
+      "input": "りんごを3個と、水を2本ください。",
+      "output": "I'm gonna need three. Two.",
+      "steps": 1,
+      "elapsedMs": 165.09999999403954,
+      "scriptMatches": true,
+      "keywordsMatched": [
+        true,
+        true
+      ],
+      "unchanged": false
+    },
+    {
+      "id": "ja-en-06",
+      "category": "date",
+      "source": "ja",
+      "target": "en",
+      "input": "会議は11月20日の午前10時に始まります。",
+      "output": "The meeting begins at 10 p.m. on 20 November.",
+      "steps": 1,
+      "elapsedMs": 221.59999999403954,
+      "scriptMatches": true,
+      "keywordsMatched": [
+        true,
+        true
+      ],
+      "unchanged": false
+    },
+    {
+      "id": "ja-en-07",
+      "category": "proper-noun",
+      "source": "ja",
+      "target": "en",
+      "input": "アンナは東京で日本語を勉強しています。",
+      "output": "Anna is studying Japanese in Tokyo.",
+      "steps": 1,
+      "elapsedMs": 122.19999998807907,
+      "scriptMatches": true,
+      "keywordsMatched": [
+        true,
+        true
+      ],
+      "unchanged": false
+    },
+    {
+      "id": "ja-en-08",
+      "category": "technical",
+      "source": "ja",
+      "target": "en",
+      "input": "このアプリはインターネットに接続せずに文章を翻訳します。",
+      "output": "This application will translate articles without connecting to the Internet.",
+      "steps": 1,
+      "elapsedMs": 214,
+      "scriptMatches": true,
+      "keywordsMatched": [
+        true,
+        true
+      ],
+      "unchanged": false
+    },
+    {
+      "id": "ja-en-09",
+      "category": "paragraphs",
+      "source": "ja",
+      "target": "en",
+      "input": "明日は雨が降る予定なので、傘を持っていきます。\n駅で友達に会ってから、一緒に美術館へ行くつもりです。",
+      "output": "And tomorrow, because the rain is expected to fall, we're gonna have to keep our heads.\nI'm going to go to the art studio together because I met my friends in the park.",
+      "steps": 1,
+      "elapsedMs": 599,
+      "scriptMatches": true,
+      "keywordsMatched": [
+        false,
+        false
+      ],
+      "unchanged": false
+    },
+    {
+      "id": "ja-en-10",
+      "category": "ambiguity",
+      "source": "ja",
+      "target": "en",
+      "input": "彼女はその本をまだ読んでいないと言いました。",
+      "output": "She said she had not read it yet.",
+      "steps": 1,
+      "elapsedMs": 145.19999998807907,
+      "scriptMatches": true,
+      "keywordsMatched": [
+        true,
+        false
+      ],
+      "unchanged": false
+    },
+    {
+      "id": "ru-en-01",
+      "category": "short",
+      "source": "ru",
+      "target": "en",
+      "input": "Доброе утро. Сегодня хорошая погода.",
+      "output": "Good morning.",
+      "steps": 1,
+      "elapsedMs": 78.69999998807907,
+      "scriptMatches": true,
+      "keywordsMatched": [
+        false
+      ],
+      "unchanged": false
+    },
+    {
+      "id": "ru-en-02",
+      "category": "casual",
+      "source": "ru",
+      "target": "en",
+      "input": "Хочешь завтра вместе пойти в парк?",
+      "output": "You want to go to the park together tomorrow?",
+      "steps": 1,
+      "elapsedMs": 174.69999998807907,
+      "scriptMatches": true,
+      "keywordsMatched": [
+        true,
+        true
+      ],
+      "unchanged": false
+    },
+    {
+      "id": "ru-en-03",
+      "category": "polite",
+      "source": "ru",
+      "target": "en",
+      "input": "Извините, не могли бы вы подсказать, как пройти к станции?",
+      "output": "Excuse me, could you not tell me how to get to the station?",
+      "steps": 1,
+      "elapsedMs": 221.69999998807907,
+      "scriptMatches": true,
+      "keywordsMatched": [
+        true
+      ],
+      "unchanged": false
+    },
+    {
+      "id": "ru-en-04",
+      "category": "negation",
+      "source": "ru",
+      "target": "en",
+      "input": "Я не ем мясо, но ем рыбу.",
+      "output": "I don't eat meat, but I eat fish.",
+      "steps": 1,
+      "elapsedMs": 167.59999999403954,
+      "scriptMatches": true,
+      "keywordsMatched": [
+        true,
+        true,
+        true
+      ],
+      "unchanged": false
+    },
+    {
+      "id": "ru-en-05",
+      "category": "quantity",
+      "source": "ru",
+      "target": "en",
+      "input": "Дайте, пожалуйста, три яблока и две бутылки воды.",
+      "output": "Come on, please, three apples and two bottles of water.",
+      "steps": 1,
+      "elapsedMs": 203.80000001192093,
+      "scriptMatches": true,
+      "keywordsMatched": [
+        true,
+        true
+      ],
+      "unchanged": false
+    },
+    {
+      "id": "ru-en-06",
+      "category": "date",
+      "source": "ru",
+      "target": "en",
+      "input": "Встреча начнётся двадцатого ноября в десять часов утра.",
+      "output": "The meeting will begin on November 20th at ten o'clock in the morning.",
+      "steps": 1,
+      "elapsedMs": 234.2999999821186,
+      "scriptMatches": true,
+      "keywordsMatched": [
+        true,
+        true
+      ],
+      "unchanged": false
+    },
+    {
+      "id": "ru-en-07",
+      "category": "proper-noun",
+      "source": "ru",
+      "target": "en",
+      "input": "Анна изучает японский язык в Токио.",
+      "output": "Anna is studying Japanese in Tokyo.",
+      "steps": 1,
+      "elapsedMs": 114.5,
+      "scriptMatches": true,
+      "keywordsMatched": [
+        true,
+        true
+      ],
+      "unchanged": false
+    },
+    {
+      "id": "ru-en-08",
+      "category": "technical",
+      "source": "ru",
+      "target": "en",
+      "input": "Это приложение переводит текст без подключения к интернету.",
+      "output": "This annex translates text without connection to the Internet.",
+      "steps": 1,
+      "elapsedMs": 171.7999999821186,
+      "scriptMatches": true,
+      "keywordsMatched": [
+        true,
+        true
+      ],
+      "unchanged": false
+    },
+    {
+      "id": "ru-en-09",
+      "category": "paragraphs",
+      "source": "ru",
+      "target": "en",
+      "input": "Завтра ожидается дождь, поэтому я возьму зонт.\nПосле встречи с другом на станции мы собираемся вместе посетить музей.",
+      "output": "Tomorrow is the rain, so I'll take the zone.\nAfter meeting another at the station, we are going to visit the museum together.",
+      "steps": 1,
+      "elapsedMs": 458.30000001192093,
+      "scriptMatches": true,
+      "keywordsMatched": [
+        false,
+        true
+      ],
+      "unchanged": false
+    },
+    {
+      "id": "ru-en-10",
+      "category": "ambiguity",
+      "source": "ru",
+      "target": "en",
+      "input": "Она сказала, что ещё не читала эту книгу.",
+      "output": "She said she hadn't read this book yet.",
+      "steps": 1,
+      "elapsedMs": 173.5,
+      "scriptMatches": true,
+      "keywordsMatched": [
+        true,
+        true
+      ],
+      "unchanged": false
+    },
+    {
+      "id": "en-ja-01",
+      "category": "short",
+      "source": "en",
+      "target": "ja",
+      "input": "Good morning. The weather is nice today.",
+      "output": "おはよう 今日の天気は良い",
+      "steps": 1,
+      "elapsedMs": 652.5999999940395,
+      "scriptMatches": true,
+      "keywordsMatched": [
+        true
+      ],
+      "unchanged": false
+    },
+    {
+      "id": "en-ja-02",
+      "category": "casual",
+      "source": "en",
+      "target": "ja",
+      "input": "Would you like to go to the park together tomorrow?",
+      "output": "明日 公園に一緒に行くのか?",
+      "steps": 1,
+      "elapsedMs": 201.09999999403954,
+      "scriptMatches": true,
+      "keywordsMatched": [
+        true,
+        true
+      ],
+      "unchanged": false
+    },
+    {
+      "id": "en-ja-03",
+      "category": "polite",
+      "source": "en",
+      "target": "ja",
+      "input": "Excuse me, could you please tell me how to get to the station?",
+      "output": "すみません スターションにどうやって言うのか?",
+      "steps": 1,
+      "elapsedMs": 285,
+      "scriptMatches": true,
+      "keywordsMatched": [
+        false
+      ],
+      "unchanged": false
+    },
+    {
+      "id": "en-ja-04",
+      "category": "negation",
+      "source": "en",
+      "target": "ja",
+      "input": "I do not eat meat, but I eat fish.",
+      "output": "肉を食べないが 鱼を食べる",
+      "steps": 1,
+      "elapsedMs": 180.59999999403954,
+      "scriptMatches": true,
+      "keywordsMatched": [
+        true,
+        false
+      ],
+      "unchanged": false
+    },
+    {
+      "id": "en-ja-05",
+      "category": "quantity",
+      "source": "en",
+      "target": "ja",
+      "input": "I would like three apples and two bottles of water, please.",
+      "output": "水の三つのアプルと2つのバットルが好きだ",
+      "steps": 1,
+      "elapsedMs": 286.2000000178814,
+      "scriptMatches": true,
+      "keywordsMatched": [
+        false,
+        true
+      ],
+      "unchanged": false
+    },
+    {
+      "id": "en-ja-06",
+      "category": "date",
+      "source": "en",
+      "target": "ja",
+      "input": "The meeting starts at ten in the morning on November twentieth.",
+      "output": "集会 は 11 月 20 日 朝 10 時 に 始め ます。",
+      "steps": 1,
+      "elapsedMs": 285.30000001192093,
+      "scriptMatches": true,
+      "keywordsMatched": [
+        false
+      ],
+      "unchanged": false
+    },
+    {
+      "id": "en-ja-07",
+      "category": "proper-noun",
+      "source": "en",
+      "target": "ja",
+      "input": "Anna is studying Japanese in Tokyo.",
+      "output": "アナはトクオインの日本語を研究してる",
+      "steps": 1,
+      "elapsedMs": 230.7999999821186,
+      "scriptMatches": true,
+      "keywordsMatched": [
+        false,
+        true
+      ],
+      "unchanged": false
+    },
+    {
+      "id": "en-ja-08",
+      "category": "technical",
+      "source": "en",
+      "target": "ja",
+      "input": "This application translates text without an internet connection.",
+      "output": "このアプリケーションはインターネット接続がないテキストを翻訳します。",
+      "steps": 1,
+      "elapsedMs": 396.80000001192093,
+      "scriptMatches": true,
+      "keywordsMatched": [
+        true,
+        true
+      ],
+      "unchanged": false
+    },
+    {
+      "id": "en-ja-09",
+      "category": "paragraphs",
+      "source": "en",
+      "target": "ja",
+      "input": "It is going to rain tomorrow, so I will bring an umbrella.\nAfter meeting my friend at the station, we plan to visit the museum together.",
+      "output": "明日の雨を 私は、パートリーを連れて来る\n私たち は, 私たち の 友人 を 会っ て, 博物館 に 共 に 訪問 する 計画 を 計画 し まし た。",
+      "steps": 1,
+      "elapsedMs": 922.6999999880791,
+      "scriptMatches": true,
+      "keywordsMatched": [
+        false,
+        true
+      ],
+      "unchanged": false
+    },
+    {
+      "id": "en-ja-10",
+      "category": "ambiguity",
+      "source": "en",
+      "target": "ja",
+      "input": "She said that she had not read the book yet.",
+      "output": "本を読んでいないと言った",
+      "steps": 1,
+      "elapsedMs": 155.19999998807907,
+      "scriptMatches": true,
+      "keywordsMatched": [
+        true,
+        true
+      ],
+      "unchanged": false
+    },
+    {
+      "id": "en-ru-01",
+      "category": "short",
+      "source": "en",
+      "target": "ru",
+      "input": "Good morning. The weather is nice today.",
+      "output": "Доброе утро, сегодня погода добре.",
+      "steps": 1,
+      "elapsedMs": 214.80000001192093,
+      "scriptMatches": true,
+      "keywordsMatched": [
+        true
+      ],
+      "unchanged": false
+    },
+    {
+      "id": "en-ru-02",
+      "category": "casual",
+      "source": "en",
+      "target": "ru",
+      "input": "Would you like to go to the park together tomorrow?",
+      "output": "Хочешь ли вы взаимно в парк?",
+      "steps": 1,
+      "elapsedMs": 191,
+      "scriptMatches": true,
+      "keywordsMatched": [
+        false,
+        true
+      ],
+      "unchanged": false
+    },
+    {
+      "id": "en-ru-03",
+      "category": "polite",
+      "source": "en",
+      "target": "ru",
+      "input": "Excuse me, could you please tell me how to get to the station?",
+      "output": "Простите, пожалуйста, можете мне сказать, как идти в станция?",
+      "steps": 1,
+      "elapsedMs": 426.10000002384186,
+      "scriptMatches": true,
+      "keywordsMatched": [
+        true
+      ],
+      "unchanged": false
+    },
+    {
+      "id": "en-ru-04",
+      "category": "negation",
+      "source": "en",
+      "target": "ru",
+      "input": "I do not eat meat, but I eat fish.",
+      "output": "Я не ежу мясо, но я ежу рыбу.",
+      "steps": 1,
+      "elapsedMs": 209.90000000596046,
+      "scriptMatches": true,
+      "keywordsMatched": [
+        true,
+        true,
+        true
+      ],
+      "unchanged": false
+    },
+    {
+      "id": "en-ru-05",
+      "category": "quantity",
+      "source": "en",
+      "target": "ru",
+      "input": "I would like three apples and two bottles of water, please.",
+      "output": "Я хотел бы три яблока и два чаше воды, пожалуйста.",
+      "steps": 1,
+      "elapsedMs": 324.7000000178814,
+      "scriptMatches": true,
+      "keywordsMatched": [
+        true,
+        false
+      ],
+      "unchanged": false
+    },
+    {
+      "id": "en-ru-06",
+      "category": "date",
+      "source": "en",
+      "target": "ru",
+      "input": "The meeting starts at ten in the morning on November twentieth.",
+      "output": "Заседание начнет в десят утром двадцатой ноября.",
+      "steps": 1,
+      "elapsedMs": 338.2000000178814,
+      "scriptMatches": true,
+      "keywordsMatched": [
+        false,
+        true
+      ],
+      "unchanged": false
+    },
+    {
+      "id": "en-ru-07",
+      "category": "proper-noun",
+      "source": "en",
+      "target": "ru",
+      "input": "Anna is studying Japanese in Tokyo.",
+      "output": "Анна изучает японский в Токио.",
+      "steps": 1,
+      "elapsedMs": 220.09999999403954,
+      "scriptMatches": true,
+      "keywordsMatched": [
+        true,
+        true
+      ],
+      "unchanged": false
+    },
+    {
+      "id": "en-ru-08",
+      "category": "technical",
+      "source": "en",
+      "target": "ru",
+      "input": "This application translates text without an internet connection.",
+      "output": "Эта программа переводит текст без взаимосвязки интернета.",
+      "steps": 1,
+      "elapsedMs": 311,
+      "scriptMatches": true,
+      "keywordsMatched": [
+        true,
+        true
+      ],
+      "unchanged": false
+    },
+    {
+      "id": "en-ru-09",
+      "category": "paragraphs",
+      "source": "en",
+      "target": "ru",
+      "input": "It is going to rain tomorrow, so I will bring an umbrella.\nAfter meeting my friend at the station, we plan to visit the museum together.",
+      "output": "Завтра дождёт, поэтому я принесу оплавку.\nПосле встреча мого друга на станции мы планируем посещеть вместе музею.",
+      "steps": 1,
+      "elapsedMs": 693.0999999940395,
+      "scriptMatches": true,
+      "keywordsMatched": [
+        false,
+        true
+      ],
+      "unchanged": false
+    },
+    {
+      "id": "en-ru-10",
+      "category": "ambiguity",
+      "source": "en",
+      "target": "ru",
+      "input": "She said that she had not read the book yet.",
+      "output": "Она сказала, что она еще не читала книги.",
+      "steps": 1,
+      "elapsedMs": 261.7000000178814,
+      "scriptMatches": true,
+      "keywordsMatched": [
+        true,
+        true
+      ],
+      "unchanged": false
+    },
+    {
+      "id": "ja-ru-01",
+      "category": "short",
+      "source": "ja",
+      "target": "ru",
+      "input": "おはようございます。今日はいい天気ですね。",
+      "output": "Радо, что ты сделал.",
+      "intermediateEnglish": "I'm glad you did.",
+      "steps": 2,
+      "elapsedMs": 1064.300000011921,
+      "scriptMatches": true,
+      "keywordsMatched": [
+        false
+      ],
+      "unchanged": false
+    },
+    {
+      "id": "ja-ru-02",
+      "category": "casual",
+      "source": "ja",
+      "target": "ru",
+      "input": "明日、一緒に公園へ行きませんか。",
+      "output": "Завтра мы не пойдем в парк.",
+      "intermediateEnglish": "Tomorrow, we're not going to the park together.",
+      "steps": 2,
+      "elapsedMs": 1100.7000000178814,
+      "scriptMatches": true,
+      "keywordsMatched": [
+        true,
+        true
+      ],
+      "unchanged": false
+    },
+    {
+      "id": "ja-ru-03",
+      "category": "polite",
+      "source": "ja",
+      "target": "ru",
+      "input": "恐れ入りますが、駅への行き方を教えていただけますか。",
+      "output": "Боюсь, что я просто пытаюсь скажить вам, как идти в парк.",
+      "intermediateEnglish": "I'm afraid I'm just trying to tell you how to go to the park.",
+      "steps": 2,
+      "elapsedMs": 1291.5,
+      "scriptMatches": true,
+      "keywordsMatched": [
+        false
+      ],
+      "unchanged": false
+    },
+    {
+      "id": "ja-ru-04",
+      "category": "negation",
+      "source": "ja",
+      "target": "ru",
+      "input": "私は肉を食べませんが、魚は食べます。",
+      "output": "Я не ежу месо, но рыба есть.",
+      "intermediateEnglish": "I don't eat meat, but fish eat.",
+      "steps": 2,
+      "elapsedMs": 1054.800000011921,
+      "scriptMatches": true,
+      "keywordsMatched": [
+        true,
+        false,
+        true
+      ],
+      "unchanged": false
+    },
+    {
+      "id": "ja-ru-05",
+      "category": "quantity",
+      "source": "ja",
+      "target": "ru",
+      "input": "りんごを3個と、水を2本ください。",
+      "output": "Мне нужно три.",
+      "intermediateEnglish": "I'm gonna need three. Two.",
+      "steps": 2,
+      "elapsedMs": 952.7999999821186,
+      "scriptMatches": true,
+      "keywordsMatched": [
+        true,
+        false
+      ],
+      "unchanged": false
+    },
+    {
+      "id": "ja-ru-06",
+      "category": "date",
+      "source": "ja",
+      "target": "ru",
+      "input": "会議は11月20日の午前10時に始まります。",
+      "output": "Заседание начнет в 10 ч. 00 м. 20 ноября.",
+      "intermediateEnglish": "The meeting begins at 10 p.m. on 20 November.",
+      "steps": 2,
+      "elapsedMs": 1161.0999999940395,
+      "scriptMatches": true,
+      "keywordsMatched": [
+        false,
+        true
+      ],
+      "unchanged": false
+    },
+    {
+      "id": "ja-ru-07",
+      "category": "proper-noun",
+      "source": "ja",
+      "target": "ru",
+      "input": "アンナは東京で日本語を勉強しています。",
+      "output": "Анна изучает японский в Токио.",
+      "intermediateEnglish": "Anna is studying Japanese in Tokyo.",
+      "steps": 2,
+      "elapsedMs": 1063.2000000178814,
+      "scriptMatches": true,
+      "keywordsMatched": [
+        true,
+        true
+      ],
+      "unchanged": false
+    },
+    {
+      "id": "ja-ru-08",
+      "category": "technical",
+      "source": "ja",
+      "target": "ru",
+      "input": "このアプリはインターネットに接続せずに文章を翻訳します。",
+      "output": "Эта приложения переводит статьи без связки с Интернет.",
+      "intermediateEnglish": "This application will translate articles without connecting to the Internet.",
+      "steps": 2,
+      "elapsedMs": 1138.3999999761581,
+      "scriptMatches": true,
+      "keywordsMatched": [
+        true,
+        true
+      ],
+      "unchanged": false
+    },
+    {
+      "id": "ja-ru-09",
+      "category": "paragraphs",
+      "source": "ja",
+      "target": "ru",
+      "input": "明日は雨が降る予定なので、傘を持っていきます。\n駅で友達に会ってから、一緒に美術館へ行くつもりです。",
+      "output": "И завтра, потому что дождь ожидается, что мы должны держать наше головы.\nЯ пойду в студио мастерства вместе, потому что я встречался с друзьями в парке.",
+      "intermediateEnglish": "And tomorrow, because the rain is expected to fall, we're gonna have to keep our heads.\nI'm going to go to the art studio together because I met my friends in the park.",
+      "steps": 2,
+      "elapsedMs": 2118.4000000059605,
+      "scriptMatches": true,
+      "keywordsMatched": [
+        false,
+        false
+      ],
+      "unchanged": false
+    },
+    {
+      "id": "ja-ru-10",
+      "category": "ambiguity",
+      "source": "ja",
+      "target": "ru",
+      "input": "彼女はその本をまだ読んでいないと言いました。",
+      "output": "Она сказала, что еще не читала.",
+      "intermediateEnglish": "She said she had not read it yet.",
+      "steps": 2,
+      "elapsedMs": 1048.2999999821186,
+      "scriptMatches": true,
+      "keywordsMatched": [
+        true,
+        false
+      ],
+      "unchanged": false
+    },
+    {
+      "id": "ru-ja-01",
+      "category": "short",
+      "source": "ru",
+      "target": "ja",
+      "input": "Доброе утро. Сегодня хорошая погода.",
+      "output": "おはよう",
+      "intermediateEnglish": "Good morning.",
+      "steps": 2,
+      "elapsedMs": 830.3000000119209,
+      "scriptMatches": true,
+      "keywordsMatched": [
+        false
+      ],
+      "unchanged": false
+    },
+    {
+      "id": "ru-ja-02",
+      "category": "casual",
+      "source": "ru",
+      "target": "ja",
+      "input": "Хочешь завтра вместе пойти в парк?",
+      "output": "明日 公園に一緒に行くのか?",
+      "intermediateEnglish": "You want to go to the park together tomorrow?",
+      "steps": 2,
+      "elapsedMs": 1021.5,
+      "scriptMatches": true,
+      "keywordsMatched": [
+        true,
+        true
+      ],
+      "unchanged": false
+    },
+    {
+      "id": "ru-ja-03",
+      "category": "polite",
+      "source": "ru",
+      "target": "ja",
+      "input": "Извините, не могли бы вы подсказать, как пройти к станции?",
+      "output": "すみません スターションに行くことは 言えないか?",
+      "intermediateEnglish": "Excuse me, could you not tell me how to get to the station?",
+      "steps": 2,
+      "elapsedMs": 1183,
+      "scriptMatches": true,
+      "keywordsMatched": [
+        false
+      ],
+      "unchanged": false
+    },
+    {
+      "id": "ru-ja-04",
+      "category": "negation",
+      "source": "ru",
+      "target": "ja",
+      "input": "Я не ем мясо, но ем рыбу.",
+      "output": "肉を食べないが 鱼を食べる",
+      "intermediateEnglish": "I don't eat meat, but I eat fish.",
+      "steps": 2,
+      "elapsedMs": 1076,
+      "scriptMatches": true,
+      "keywordsMatched": [
+        true,
+        false
+      ],
+      "unchanged": false
+    },
+    {
+      "id": "ru-ja-05",
+      "category": "quantity",
+      "source": "ru",
+      "target": "ja",
+      "input": "Дайте, пожалуйста, три яблока и две бутылки воды.",
+      "output": "水の三つの 水の2つのボタイ",
+      "intermediateEnglish": "Come on, please, three apples and two bottles of water.",
+      "steps": 2,
+      "elapsedMs": 1139.5,
+      "scriptMatches": true,
+      "keywordsMatched": [
+        false,
+        true
+      ],
+      "unchanged": false
+    },
+    {
+      "id": "ru-ja-06",
+      "category": "date",
+      "source": "ru",
+      "target": "ja",
+      "input": "Встреча начнётся двадцатого ноября в десять часов утра.",
+      "output": "午前10時に 集会は11月20日の時間を始める",
+      "intermediateEnglish": "The meeting will begin on November 20th at ten o'clock in the morning.",
+      "steps": 2,
+      "elapsedMs": 1211.2000000178814,
+      "scriptMatches": true,
+      "keywordsMatched": [
+        false
+      ],
+      "unchanged": false
+    },
+    {
+      "id": "ru-ja-07",
+      "category": "proper-noun",
+      "source": "ru",
+      "target": "ja",
+      "input": "Анна изучает японский язык в Токио.",
+      "output": "アナはトクオインの日本語を研究してる",
+      "intermediateEnglish": "Anna is studying Japanese in Tokyo.",
+      "steps": 2,
+      "elapsedMs": 1027.699999988079,
+      "scriptMatches": true,
+      "keywordsMatched": [
+        false,
+        true
+      ],
+      "unchanged": false
+    },
+    {
+      "id": "ru-ja-08",
+      "category": "technical",
+      "source": "ru",
+      "target": "ja",
+      "input": "Это приложение переводит текст без подключения к интернету.",
+      "output": "このアレクストールはインターネットに接続しないテキストを翻訳します。",
+      "intermediateEnglish": "This annex translates text without connection to the Internet.",
+      "steps": 2,
+      "elapsedMs": 1207.300000011921,
+      "scriptMatches": true,
+      "keywordsMatched": [
+        true,
+        true
+      ],
+      "unchanged": false
+    },
+    {
+      "id": "ru-ja-09",
+      "category": "paragraphs",
+      "source": "ru",
+      "target": "ja",
+      "input": "Завтра ожидается дождь, поэтому я возьму зонт.\nПосле встречи с другом на станции мы собираемся вместе посетить музей.",
+      "output": "明日は雨だから 私は地域を取り入れます\nステーションに 別の会いに会った後 私たちは博物館に一緒に訪問する",
+      "intermediateEnglish": "Tomorrow is the rain, so I'll take the zone.\nAfter meeting another at the station, we are going to visit the museum together.",
+      "steps": 2,
+      "elapsedMs": 1737,
+      "scriptMatches": true,
+      "keywordsMatched": [
+        false,
+        true
+      ],
+      "unchanged": false
+    },
+    {
+      "id": "ru-ja-10",
+      "category": "ambiguity",
+      "source": "ru",
+      "target": "ja",
+      "input": "Она сказала, что ещё не читала эту книгу.",
+      "output": "本を読んでいないと言った",
+      "intermediateEnglish": "She said she hadn't read this book yet.",
+      "steps": 2,
+      "elapsedMs": 1033.4000000059605,
+      "scriptMatches": true,
+      "keywordsMatched": [
+        true,
+        true
+      ],
+      "unchanged": false
+    }
+  ]
+}

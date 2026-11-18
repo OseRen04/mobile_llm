@@ -1,0 +1,9 @@
+html { width: 760px; min-height: 560px; }
+body { min-width: 320px; }
+.page-tools { margin: 16px 24px 0; padding: 18px 22px; background: #eaf4ef; border: 1px solid #c8ddd1; border-radius: 16px; color: #183c31; }
+.page-tools-title { display: flex; justify-content: space-between; gap: 16px; font-size: 13px; }
+.page-tools-title span { font-size: 11px; }
+.page-tool-actions { display: flex; gap: 10px; margin: 12px 0 8px; }
+.page-tool-actions button { border: 1px solid #597e70; border-radius: 9px; padding: 9px 12px; color: #183c31; background: white; font: inherit; cursor: pointer; }
+.page-tool-actions button:disabled { opacity: .45; cursor: default; }
+.page-tools p { margin: 8px 0 0; line-height: 1.7; font-size: 12px; }
